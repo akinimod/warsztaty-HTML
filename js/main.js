@@ -57,7 +57,29 @@ function sitOnChair() {
     }
     guzikPrev.addEventListener('click', prev);
 
+var downList = document.querySelectorAll('.drop_down_list');
+// console.log(listArrow);
 
+function choice(){
+var listPanel= this.querySelector('.list_panel');
+
+if (listPanel != null) {
+            listPanel.style.display = 'inline-block';
+        }
+}
+
+function choiceOut(){
+var listPanel= this.querySelector('.list_panel');
+
+if (listPanel != null) {
+            listPanel.style.display = 'none';
+        }
+}
+
+for (var i = 0; i < downList.length; i++) {
+  downList[i].addEventListener('mouseover' , choice);
+  downList[i].addEventListener('mouseout' , choiceOut);
+}
 
 }
 document.addEventListener("DOMContentLoaded", sitOnChair);
